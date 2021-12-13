@@ -1,0 +1,246 @@
+* {
+  margin: 0;
+  padding: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px; /*acá está la fuente de todo lo que va a ser el body, no está incluido el header*/
+  font-family: "Slabo 27px", serif;
+  background: #232931; /*fondo del body*/
+  color: #fff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Slabo 27px", serif;
+  font-weight: normal;
+}
+
+a {
+  text-decoration: none; /*sin decoración los a ref significa que no van a tener el subrayado cuando se los seleccione*/
+  color: #fff; /*texto de todo lo que tenga un a ref*/
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.contenedor {
+  max-width: 1000px; /*como máximo el contenedor va a tener 1000 px*/
+  width: 90%; /*Va a ocupar un 90% del contenedor pero como límite va a tener 1000px*/
+  margin: auto; /*Lo centra al contenedor*/
+}
+
+.centro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.izquierda {
+  float: left; /*el boton flota a la izquierda dentro del contenedor*/
+}
+
+.derecha {
+  float: right; /*el boton flota a la derecha dentro del contenedor*/
+}
+
+/*-------HEADER------*/
+
+header {
+  margin: 40px 0; /*es el margen del titulo que dice Mi Galería*/
+  font-size: 20px; /*tamaño de la fuente*/
+  text-align: center; /*alineamiento al centro*/
+}
+
+/*-----FOTOS------*/
+.fotos .contenedor {
+  display: flex; /*sin esto se ubican uno abajo de otro, con esto uno al lado del otro*/
+  flex-direction: row;
+  flex-wrap: wrap; /*sin esto están uno al lado del otro chiquitos sin espacio entre medio*/
+  justify-content: space-between; /*esto hace que estén separados de manera justificada*/
+}
+
+.thumb {
+  width: 22%; /*porcentaje del tamaño de la imagen*/
+  margin-bottom: 30px; /*margen de abajo de la foto*/
+  outline: 5px solid rgba(255, 255, 255, 0);
+  -webkit-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8);
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.8); /*sombra de las imágenes el punto y algo es la transparencia*/
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease; /*el punto y algo es la transición*/
+}
+
+.thumb:hover {
+  /*es para cunado te apoyas arriba del contenedor*/
+  outline: 5px solid rgba(255, 255, 255, 1); /*el color de la transicion y el último valor es la transparencia*/
+}
+
+.thumb a {
+  display: block;
+}
+
+.thumb img {
+  vertical-align: top;
+  width: 100%;
+}
+
+/*----Single foto-----*/
+.foto {
+  width: 100%;
+  margin: auto;
+  max-width: 500px;
+  text-align: center;
+}
+
+.foto img {
+  width: 100%;
+  vertical-align: top;
+  -webkit-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8);
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8);
+  margin-bottom: 30px;
+}
+
+.foto .texto {
+  max-width: 500px;
+  margin-bottom: 30px;
+}
+
+.regresar {
+  padding: 5px 10px;
+  margin-bottom: 30px;
+  display: inline-block;
+  border-radius: 50px;
+  font-size: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.regresar:hover {
+  border: 1px solid #fff;
+  text-decoration: none;
+}
+
+.regresar .fa {
+  margin-right: 15px;
+}
+
+/*------Footer------*/
+
+footer .copyright {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 16px;
+  padding: 15px 0;
+}
+
+/*-----------Paginacion---------*/
+
+.paginacion {
+  width: 100%;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.archivos {
+  max-width: 1000px; /*como máximo el contenedor va a tener 1000 px*/
+  width: 30%; /*Va a ocupar un 90% del contenedor pero como límite va a tener 1000px*/
+  margin: auto; /*Lo centra al contenedor*/
+}
+
+.paginacion a {
+  display: inline-block;
+  padding: 15px 20px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  -webkit-transition: all 3s ease;
+  -o-transition: all 3s ease;
+  transition: all 3s ease;
+}
+
+.paginacion a:hover {
+  border: 1px solid #fff;
+  text-decoration: none;
+}
+
+.paginacion .izquierda .fa {
+  margin-right: 10px;
+}
+
+.paginacion .derecha .fa {
+  margin-left: 10px;
+}
+
+/*------------Formulario----------*/
+.formulario {
+  max-width: 500px;
+  width: 90%;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+.formulario label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.formulario .error {
+  border: 1px solid red;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+.formulario input[type="text"],
+.formulario input[type="file"],
+.formulario textarea {
+  width: 100%;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.formulario input[type="text"],
+.formulario textarea {
+  padding: 10px;
+  background: none;
+  font-family: "Slabo 27px", serif;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.formulario textarea {
+  min-height: 76;
+  max-height: 150px;
+  max-width: 100%;
+  min-height: 100%;
+}
+
+.formulario textarea:focus {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.formulario .submit {
+  display: inline-block;
+  text-align: center;
+  color: #fff;
+  padding: 15px 20px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: none;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.formulario .submit:hover {
+  border: 1px solid rgba(255, 255, 255, 1);
+}
